@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        main {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>College Portal</h1>
+    </header>
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('students')">Student Details</a>
+        <a onclick="showPage('courses')">Courses</a>
+        <a onclick="showPage('events')">College Events</a>
+    </nav>
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <h2>Welcome to College Portal</h2>
+            <p>This portal provides information about students, courses, and college events.</p>
+            <p>Use the navigation bar to explore different sections.</p>
+        </div>
+
+        <!-- Student Details Page -->
+        <div id="students" class="page">
+            <h2>List of Students</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>Ravi Kumar</td>
+                    <td>B.Tech</td>
+                    <td>ravi@example.com</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Priya Sharma</td>
+                    <td>MCA</td>
+                    <td>priya@example.com</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Arjun Singh</td>
+                    <td>B.Sc</td>
+                    <td>arjun@example.com</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Courses Page -->
+        <div id="courses" class="page">
+            <h2>Available Courses</h2>
+            <table>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Course Name</th>
+                    <th>Duration</th>
+                    <th>Department</th>
+                </tr>
+                <tr>
+                    <td>C101</td>
+                    <td>Computer Science</td>
+                    <td>4 Years</td>
+                    <td>Engineering</td>
+                </tr>
+                <tr>
+                    <td>C102</td>
+                    <td>Master of Computer Applications (MCA)</td>
+                    <td>3 Years</td>
+                    <td>IT</td>
+                </tr>
+                <tr>
+                    <td>C103</td>
+                    <td>Bachelor of Science (B.Sc)</td>
+                    <td>3 Years</td>
+                    <td>Science</td>
+                </tr>
+                <tr>
+                    <td>C104</td>
+                    <td>Mechanical Engineering</td>
+                    <td>4 Years</td>
+                    <td>Engineering</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- College Events Page -->
+        <div id="events" class="page">
+            <h2>Upcoming College Events</h2>
+            <table>
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Annual Sports Meet</td>
+                    <td>15-Feb-2026</td>
+                    <td>Main Ground</td>
+                    <td>Inter-college sports competition</td>
+                </tr>
+                <tr>
+                    <td>Science Fest</td>
+                    <td>25-Mar-2026</td>
+                    <td>Auditorium</td>
+                    <td>Exhibition of student projects</td>
+                </tr>
+                <tr>
+                    <td>Graduation Ceremony</td>
+                    <td>30-Apr-2026</td>
+                    <td>Auditorium</td>
+                    <td>Convocation for graduating students</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
+
